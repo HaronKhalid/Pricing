@@ -1,225 +1,293 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Digital Takhleeq | Digital services built around your business</title>
-<meta name="description" content="Websites, social media, Google Business Profile and reels for local businesses. Choose what you need. Remove what you don't.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
-<style>
-/* OWNER CONFIG: contact details are in the SCRIPT at the bottom (WA, EMAIL). Prices live in the arrays and S list in the script. */
-:root{--navy:#0B1B3A;--navy2:#15305F;--gold:#C9A24B;--gt:#8A6A1C;--bg:#F7F2E8;--alt:#EEE6D3;--fg:#0B1B3A;--mut:#56607A;--card:#FFFDF8;--line:#DDD2BA;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--gt:#DDB964;--bg:#0B1B3A;--alt:#0F2347;--fg:#F7F2E8;--mut:#A9B3CB;--card:#13284F;--line:#27407A}}
-:root[data-theme="dark"]{--gt:#DDB964;--bg:#0B1B3A;--alt:#0F2347;--fg:#F7F2E8;--mut:#A9B3CB;--card:#13284F;--line:#27407A}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-*,*:before,*:after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.12;margin:0;letter-spacing:-.01em}
-h1{font-size:clamp(2.3rem,7vw,4.4rem)}h2{font-size:clamp(1.8rem,4.6vw,3rem)}h3{font-size:1.3rem}
-p{margin:0}a{color:inherit}
-.w{max-width:1120px;margin:0 auto;padding:0 20px}
-section{padding:clamp(56px,9vw,104px) 0}.alt{background:var(--alt)}
-.lead{color:var(--mut);max-width:60ch;margin-top:14px;font-size:1.05rem}
-.hd{margin-bottom:40px}
-.btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--fg);transition:transform .2s,background .2s;text-align:center;cursor:pointer;font-family:inherit;font-size:.98rem}
-.btn:hover{transform:translateY(-2px)}.btn:focus-visible,summary:focus-visible,.svc:focus-visible,.chip:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}.line{background:transparent;color:var(--fg)}
-/* nav + hero */
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:#F7F2E8}
-nav .w{display:flex;justify-content:space-between;align-items:center;height:62px}
-nav b{font:600 1.15rem Fraunces,Georgia,serif}nav a.btn{padding:9px 18px;font-size:.9rem;color:var(--navy)}
-.hero{background:var(--navy);color:#F7F2E8;padding:clamp(48px,8vw,96px) 0 clamp(64px,9vw,110px)}
-.hero .w{display:grid;gap:44px;grid-template-columns:1fr;align-items:center}
-@media(min-width:900px){.hero .w{grid-template-columns:1.15fr .85fr}}
-.hero p.lead{color:#B9C3DA}.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.hero .line{border-color:#F7F2E8;color:#F7F2E8}
-.slip{background:#F7F2E8;color:var(--navy);border-radius:22px 22px 6px 22px;padding:26px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
-.slip h3{font-size:1.1rem;margin-bottom:6px}.slip small{color:#56607A}
-.slip .r{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed #C9BC9C;transition:opacity .4s}
-.slip .r i{width:42px;height:24px;border-radius:99px;background:var(--navy);position:relative;transition:background .4s;flex:none}
-.slip .r i:after{content:"";position:absolute;top:3px;left:21px;width:18px;height:18px;border-radius:50%;background:var(--gold);transition:left .4s}
-.slip .r.off{opacity:.45}.slip .r.off i{background:#B8AE97}.slip .r.off i:after{left:3px;background:#F7F2E8}
-.slip .t{margin-top:16px;font:600 1.2rem Fraunces,Georgia,serif}
-/* value + services */
-.g{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.val{border-top:3px solid var(--gold);padding-top:16px}.val p{color:var(--mut);margin-top:8px}
-.svcs{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card)}
-.sv{padding:26px;border:1px solid var(--line);margin:-.5px}.sv p{color:var(--mut);margin:8px 0 12px;font-size:.96rem}
-.tag{display:inline-block;font-size:.78rem;font-weight:600;padding:3px 11px;border-radius:99px;border:1px solid var(--line)}
-.tag.once{background:#E7EEF9;color:#15305F;border-color:#C5D3EC}.tag.mo{background:#F6EBCB;color:#6B4F0E;border-color:#E6D299}.tag.cq{background:#EEE;color:#444;border-color:#D5D5D5}
-/* cards */
-.cards{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));align-items:stretch}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative;display:flex;flex-direction:column;gap:12px}
-.card.best{border:2px solid var(--gold);background:var(--card);box-shadow:0 20px 40px -24px rgba(201,162,75,.8)}
-.ribbon{position:absolute;top:-13px;right:20px;background:var(--gold);color:var(--navy);font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:99px}
-.card .tag.once,.card .tag.mo{align-self:flex-start}
-.d{color:var(--mut);font-size:.95rem}
-.pr{display:flex;flex-direction:column;border-top:1px solid var(--line);padding-top:12px}
-.pr small{color:var(--mut)}.pr b{font:600 1.9rem Fraunces,Georgia,serif}.pr span{color:var(--mut);font-size:.9rem}
-.card ul{list-style:none;padding:0;margin:0;flex:1;font-size:.94rem}
-.card li{padding:5px 0 5px 24px;position:relative}.card li:before{content:"";position:absolute;left:2px;top:12px;width:12px;height:6px;border-left:2px solid var(--gt);border-bottom:2px solid var(--gt);transform:rotate(-45deg)}
-.note{color:var(--mut);font-size:.88rem;margin-top:18px;max-width:75ch}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chips span{border:1px dashed var(--gt);border-radius:99px;padding:6px 14px;font-size:.9rem}
-.two{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-/* calculator */
-.calc{display:grid;gap:24px;grid-template-columns:1fr}
-@media(min-width:960px){.calc{grid-template-columns:1.3fr .7fr;align-items:start}}
-.svg{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.svc{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:18px;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:border-color .2s,background .2s}
-.svc.on{border-color:var(--gold);background:var(--card);box-shadow:inset 0 0 0 1px var(--gold)}
-.svc .top{display:flex;justify-content:space-between;align-items:center;gap:10px}.svc b{font-weight:600}
-.svc .sw{width:42px;height:24px;border-radius:99px;background:#B8AE97;position:relative;flex:none;transition:background .25s}
-.svc .sw:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .25s}
-.svc.on .sw{background:var(--navy)}.svc.on .sw:after{left:21px;background:var(--gold)}
-.svc small{display:block;color:var(--mut);margin-top:6px}
-.opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.chip{border:1px solid var(--line);background:transparent;color:inherit;border-radius:99px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer}
-.chip.on{background:var(--navy);color:#F7F2E8;border-color:var(--navy)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.on{background:var(--gold);color:var(--navy);border-color:var(--gold)}}
-.sum{background:var(--navy);color:#F7F2E8;border-radius:22px;padding:26px;position:sticky;top:78px}
-.sum h3{margin-bottom:14px}.sum .l{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #2A4378}
-.sum .l b{font:600 1.35rem Fraunces,Georgia,serif;color:var(--gold);text-align:right}.sum small{color:#A9B3CB;display:block;margin-top:12px}.sum .btn{width:100%;margin-top:16px}
-/* steps, portfolio, faq, cta */
-.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));counter-reset:s}
-.st{counter-increment:s;padding:20px;border-left:2px solid var(--gold);background:var(--card);border-radius:0 14px 14px 0}
-.st:before{content:counter(s);font:600 1.6rem Fraunces,Georgia,serif;color:var(--gt)}.st p{color:var(--mut);font-size:.92rem;margin-top:4px}
-.demo{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
-.demo .th{height:150px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:flex;align-items:flex-end;padding:14px;color:#F7F2E8;font-size:.85rem}
-.demo div+div{padding:16px}.demo p{color:var(--mut);font-size:.9rem}
-details{border-bottom:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary:after{content:"+";color:var(--gt);font-size:1.4rem;line-height:1}details[open] summary:after{content:"\2212"}details p{color:var(--mut);margin-top:10px;max-width:70ch}
-.cta{background:var(--navy);color:#F7F2E8;text-align:center}.cta p{color:#B9C3DA;margin:16px auto 28px;max-width:52ch}.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.cta .line{border-color:#F7F2E8;color:#F7F2E8}
-footer{background:#07122A;color:#8E9BB8;font-size:.82rem;padding:32px 0}footer p+p{margin-top:8px}
-.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#25D366;color:#073B1B;font-weight:600;padding:13px 20px;border-radius:99px;text-decoration:none;box-shadow:0 10px 24px rgba(0,0,0,.3)}
-.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
-</style></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Digital Takhleeq | Digital services built around your business</title>
+  <meta name="description" content="Websites, social media, Google Business Profile and reels for local businesses. Choose what you need. Remove what you don't.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<nav><div class="w"><b>Digital Takhleeq</b><a class="btn gold" id="nwa" href="#">WhatsApp us</a></div></nav>
 
-<header class="hero"><div class="w">
-<div><h1>Build your digital presence without paying for what you don't need.</h1>
-<p class="lead">Websites, social media management, Google Business Profile, reels and digital solutions for growing businesses in Islamabad, Rawalpindi and across Pakistan.</p>
-<div class="row"><a class="btn gold" href="#build">Build My Package</a><a class="btn line" href="#services">View Services</a></div></div>
-<div class="slip" aria-hidden="true"><h3>Your package</h3><small>Choose what you need. Remove what you don't.</small>
-<div class="r"><span>Website</span><i></i></div><div class="r"><span>Social media</span><i></i></div><div class="r"><span>Google Business Profile</span><i></i></div><div class="r off"><span>Reels</span><i></i></div><div class="r off"><span>SEO</span><i></i></div><div class="r off"><span>Automation</span><i></i></div>
-<div class="t" id="slipT"></div></div></div></header>
+  <!-- Navigation -->
+  <nav>
+    <div class="w">
+      <b>Digital Takhleeq</b>
+      <a class="btn gold" id="nwa" href="#">WhatsApp us</a>
+    </div>
+  </nav>
 
-<section><div class="w"><div class="hd rv"><h2>You don't need to buy everything. You need the right services.</h2><p class="lead">Start with a simple website from a small budget, then add services as your business grows.</p></div>
-<div class="g">
-<div class="val rv"><h3>Affordable</h3><p>Professional digital services designed for local businesses and realistic budgets.</p></div>
-<div class="val rv"><h3>Flexible</h3><p>Choose individual services or combine them into a package that fits you.</p></div>
-<div class="val rv"><h3>Professional</h3><p>Modern websites and consistent branding that make your business look trustworthy.</p></div>
-<div class="val rv"><h3>Scalable</h3><p>Start small today. Add social media, Google, reels and more when you are ready.</p></div></div></div></section>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="w">
+      <div>
+        <h1>Build your digital presence without paying for what you don't need.</h1>
+        <p class="lead">Websites, social media management, Google Business Profile, reels and digital solutions for growing businesses in Islamabad, Rawalpindi and across Pakistan.</p>
+        <div class="row">
+          <a class="btn gold" href="#build">Build My Package</a>
+          <a class="btn line" href="#services">View Services</a>
+        </div>
+      </div>
 
-<section class="alt" id="services"><div class="w"><div class="hd rv"><h2>Services for every stage of your business</h2><p class="lead">Each service stands on its own. Mix them any way you like.</p></div><div class="svcs rv" id="svcGrid"></div></div></section>
+      <div class="slip" aria-hidden="true">
+        <h3>Your package</h3>
+        <small>Choose what you need. Remove what you don't.</small>
+        <div class="r"><span>Website</span><i></i></div>
+        <div class="r"><span>Social media</span><i></i></div>
+        <div class="r"><span>Google Business Profile</span><i></i></div>
+        <div class="r off"><span>Reels</span><i></i></div>
+        <div class="r off"><span>SEO</span><i></i></div>
+        <div class="r off"><span>Automation</span><i></i></div>
+        <div class="t" id="slipT"></div>
+      </div>
+    </div>
+  </header>
 
-<section id="web"><div class="w"><div class="hd rv"><h2>Website plans</h2><p class="lead">A fast, mobile-friendly website with WhatsApp and call buttons, so customers can reach you in one tap. Delivered in 3 to 5 working days once we have your content.</p></div>
-<div class="cards" id="webC"></div>
-<div class="chips rv"><span>Extra section</span><span>Extra page</span><span>Advanced animation</span><span>Professional copywriting</span><span>Gallery setup</span><span>Contact form</span><span>Analytics</span><span>SEO upgrade</span><span>Extra revision</span></div>
-<p class="note">Add only what you need. Add-ons start from PKR 500 to 1,000 and are quoted to your project. You provide your logo, photos and business details; we organise and present them professionally.</p></div></section>
+  <!-- Value Proposition Section -->
+  <section>
+    <div class="w">
+      <div class="hd rv">
+        <h2>You don't need to buy everything. You need the right services.</h2>
+        <p class="lead">Start with a simple website from a small budget, then add services as your business grows.</p>
+      </div>
+      <div class="g">
+        <div class="val rv">
+          <h3>Affordable</h3>
+          <p>Professional digital services designed for local businesses and realistic budgets.</p>
+        </div>
+        <div class="val rv">
+          <h3>Flexible</h3>
+          <p>Choose individual services or combine them into a package that fits you.</p>
+        </div>
+        <div class="val rv">
+          <h3>Professional</h3>
+          <p>Modern websites and consistent branding that make your business look trustworthy.</p>
+        </div>
+        <div class="val rv">
+          <h3>Scalable</h3>
+          <p>Start small today. Add social media, Google, reels and more when you are ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="alt" id="social"><div class="w"><div class="hd rv"><h2>Social media plans</h2><p class="lead">Keep Facebook and Instagram active and professional, from posting only to full content management.</p></div>
-<div class="cards" id="socC"></div>
-<p class="note">We deliver the agreed content and management work each month. Results such as followers, sales or leads cannot be guaranteed.</p></div></section>
+  <!-- Overview of Services -->
+  <section class="alt" id="services">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Services for every stage of your business</h2>
+        <p class="lead">Each service stands on its own. Mix them any way you like.</p>
+      </div>
+      <div class="svcs rv" id="svcGrid"></div>
+    </div>
+  </section>
 
-<section id="gbp"><div class="w"><div class="hd rv"><h2>Google Business Profile</h2><p class="lead">Be easier to find and more trustworthy when customers search for you on Google and Google Maps.</p></div>
-<div class="two" id="gbpC"></div><p class="note">We do not promise specific Google rankings.</p></div></section>
+  <!-- Website Plans -->
+  <section id="web">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Website plans</h2>
+        <p class="lead">A fast, mobile-friendly website with WhatsApp and call buttons, so customers can reach you in one tap. Delivered in 3 to 5 working days once we have your content.</p>
+      </div>
+      <div class="cards" id="webC"></div>
+      <div class="chips rv">
+        <span>Extra section</span>
+        <span>Extra page</span>
+        <span>Advanced animation</span>
+        <span>Professional copywriting</span>
+        <span>Gallery setup</span>
+        <span>Contact form</span>
+        <span>Analytics</span>
+        <span>SEO upgrade</span>
+        <span>Extra revision</span>
+      </div>
+      <p class="note">Add only what you need. Add-ons start from PKR 500 to 1,000 and are quoted to your project. You provide your logo, photos and business details; we organise and present them professionally.</p>
+    </div>
+  </section>
 
-<section class="alt" id="reels"><div class="w"><div class="hd rv"><h2>Reels and content editing</h2><p class="lead">Turn your raw footage into polished short videos. Buy one reel or a bundle.</p></div>
-<div class="cards" id="reelC"></div>
-<p class="note">Final price depends on footage quality, length, number of cuts, subtitles, effects and revisions.</p></div></section>
+  <!-- Social Media Plans -->
+  <section class="alt" id="social">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Social media plans</h2>
+        <p class="lead">Keep Facebook and Instagram active and professional, from posting only to full content management.</p>
+      </div>
+      <div class="cards" id="socC"></div>
+      <p class="note">We deliver the agreed content and management work each month. Results such as followers, sales or leads cannot be guaranteed.</p>
+    </div>
+  </section>
 
-<section id="build"><div class="w"><div class="hd rv"><h2>Build your own package</h2><p class="lead">Switch services on and off and watch your starting estimate change. One-time and monthly costs stay separate.</p></div>
-<div class="calc"><div class="svg" id="svg"></div>
-<aside class="sum"><h3>Your estimate</h3><div id="sumB"></div><small>Estimates are starting prices. Final pricing depends on requirements, content and complexity. Advertising budget is separate from management fees.</small><a class="btn gold" id="calcWA" href="#">Send my package on WhatsApp</a></aside></div></div></section>
+  <!-- Google Business Profile -->
+  <section id="gbp">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Google Business Profile</h2>
+        <p class="lead">Be easier to find and more trustworthy when customers search for you on Google and Google Maps.</p>
+      </div>
+      <div class="two" id="gbpC"></div>
+      <p class="note">We do not promise specific Google rankings.</p>
+    </div>
+  </section>
 
-<section class="alt" id="bundles"><div class="w"><div class="hd rv"><h2>Ready-made packages</h2><p class="lead">Prefer something already put together? These bundles combine the most requested services. Each can still be adjusted to your budget.</p></div>
-<div class="cards" id="bunC"></div><p class="note">Packages are flexible. Services can be added or removed according to your requirements and budget.</p></div></section>
+  <!-- Reels and Content Editing -->
+  <section class="alt" id="reels">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Reels and content editing</h2>
+        <p class="lead">Turn your raw footage into polished short videos. Buy one reel or a bundle.</p>
+      </div>
+      <div class="cards" id="reelC"></div>
+      <p class="note">Final price depends on footage quality, length, number of cuts, subtitles, effects and revisions.</p>
+    </div>
+  </section>
 
-<section><div class="w"><div class="hd rv"><h2>How it works</h2></div><div class="steps">
-<div class="st rv"><h3>Tell us about your business</h3><p>Share your services and goals on WhatsApp.</p></div>
-<div class="st rv"><h3>Choose your services</h3><p>Pick a package or build your own.</p></div>
-<div class="st rv"><h3>We build and manage</h3><p>We set up your digital presence.</p></div>
-<div class="st rv"><h3>Review</h3><p>You check the work and request changes.</p></div>
-<div class="st rv"><h3>Launch</h3><p>Your business goes live.</p></div>
-<div class="st rv"><h3>Continue growing</h3><p>Add services whenever you are ready.</p></div></div></div></section>
+  <!-- Interactive Package Calculator -->
+  <section id="build">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Build your own package</h2>
+        <p class="lead">Switch services on and off and watch your starting estimate change. One-time and monthly costs stay separate.</p>
+      </div>
+      <div class="calc">
+        <div class="svg" id="svg"></div>
+        <aside class="sum">
+          <h3>Your estimate</h3>
+          <div id="sumB"></div>
+          <small>Estimates are starting prices. Final pricing depends on requirements, content and complexity. Advertising budget is separate from management fees.</small>
+          <a class="btn gold" id="calcWA" href="#">Send my package on WhatsApp</a>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-<section class="alt"><div class="w"><div class="hd rv"><h2>Demo projects</h2><p class="lead">Sample layouts showing the kind of websites we build. Real client work is added as projects launch.</p></div>
-<div class="g" id="demoC"></div></div></section>
+  <!-- Ready-Made Bundles -->
+  <section class="alt" id="bundles">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Ready-made packages</h2>
+        <p class="lead">Prefer something already put together? These bundles combine the most requested services. Each can still be adjusted to your budget.</p>
+      </div>
+      <div class="cards" id="bunC"></div>
+      <p class="note">Packages are flexible. Services can be added or removed according to your requirements and budget.</p>
+    </div>
+  </section>
 
-<section><div class="w"><div class="hd rv"><h2>Questions, answered</h2></div>
-<details><summary>How long does a website take?</summary><p>Usually 3 to 5 working days, once you have sent all your content and feedback. Complex projects can take longer.</p></details>
-<details><summary>What do I need to provide?</summary><p>Your business name, logo, phone and WhatsApp number, address, a short description, services, photos and social media links. We organise and present everything professionally.</p></details>
-<details><summary>Can I start small and add services later?</summary><p>Yes. Many clients start with a website and add Google Business Profile, social media or reels later.</p></details>
-<details><summary>Can the package fit my budget?</summary><p>We adjust the package to your budget by choosing which services and features to include.</p></details>
-<details><summary>Is the advertising budget included?</summary><p>No. Advertising budget is separate from management fees and goes directly to the ad platform.</p></details>
-<details><summary>Do you guarantee rankings or sales?</summary><p>No. SEO results and search rankings cannot be guaranteed, and we do not promise followers, leads or sales. We guarantee the agreed work and deliverables.</p></details>
-<details><summary>What about SEO, ads and automation?</summary><p>These are quoted individually based on your website, business and goals. Message us for a custom quote.</p></details></div></section>
+  <!-- How It Works -->
+  <section>
+    <div class="w">
+      <div class="hd rv">
+        <h2>How it works</h2>
+      </div>
+      <div class="steps">
+        <div class="st rv">
+          <h3>Tell us about your business</h3>
+          <p>Share your services and goals on WhatsApp.</p>
+        </div>
+        <div class="st rv">
+          <h3>Choose your services</h3>
+          <p>Pick a package or build your own.</p>
+        </div>
+        <div class="st rv">
+          <h3>We build and manage</h3>
+          <p>We set up your digital presence.</p>
+        </div>
+        <div class="st rv">
+          <h3>Review</h3>
+          <p>You check the work and request changes.</p>
+        </div>
+        <div class="st rv">
+          <h3>Launch</h3>
+          <p>Your business goes live.</p>
+        </div>
+        <div class="st rv">
+          <h3>Continue growing</h3>
+          <p>Add services whenever you are ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="cta"><div class="w rv"><h2>Let's build your digital presence.</h2><p>Tell us about your business. We will reply with a clear plan and starting price.</p>
-<div class="row"><a class="btn gold" id="fwa" href="#">Chat on WhatsApp</a><a class="btn line" id="fcall" href="#">Call us</a><a class="btn line" id="fmail" href="#">Email us</a></div></div></section>
+  <!-- Demo Projects -->
+  <section class="alt">
+    <div class="w">
+      <div class="hd rv">
+        <h2>Demo projects</h2>
+        <p class="lead">Sample layouts showing the kind of websites we build. Real client work is added as projects launch.</p>
+      </div>
+      <div class="g" id="demoC"></div>
+    </div>
+  </section>
 
-<footer><div class="w"><p>All prices are starting prices. Final pricing may vary depending on requirements, content, customization, number of platforms and project complexity.</p><p>Client-provided content and assets are required unless content creation is included in the selected package. Advertising budget is separate from management fees. SEO results and search rankings cannot be guaranteed.</p><p>Digital Takhleeq, Islamabad and Rawalpindi, Pakistan.</p></div></footer>
-<a class="fab" id="fab" href="#">WhatsApp</a>
+  <!-- FAQ Section -->
+  <section>
+    <div class="w">
+      <div class="hd rv">
+        <h2>Questions, answered</h2>
+      </div>
+      <details>
+        <summary>How long does a website take?</summary>
+        <p>Usually 3 to 5 working days, once you have sent all your content and feedback. Complex projects can take longer.</p>
+      </details>
+      <details>
+        <summary>What do I need to provide?</summary>
+        <p>Your business name, logo, phone and WhatsApp number, address, a short description, services, photos and social media links. We organise and present everything professionally.</p>
+      </details>
+      <details>
+        <summary>Can I start small and add services later?</summary>
+        <p>Yes. Many clients start with a website and add Google Business Profile, social media or reels later.</p>
+      </details>
+      <details>
+        <summary>Can the package fit my budget?</summary>
+        <p>We adjust the package to your budget by choosing which services and features to include.</p>
+      </details>
+      <details>
+        <summary>Is the advertising budget included?</summary>
+        <p>No. Advertising budget is separate from management fees and goes directly to the ad platform.</p>
+      </details>
+      <details>
+        <summary>Do you guarantee rankings or sales?</summary>
+        <p>No. SEO results and search rankings cannot be guaranteed, and we do not promise followers, leads or sales. We guarantee the agreed work and deliverables.</p>
+      </details>
+      <details>
+        <summary>What about SEO, ads and automation?</summary>
+        <p>These are quoted individually based on your website, business and goals. Message us for a custom quote.</p>
+      </details>
+    </div>
+  </section>
 
-<script>
-document.documentElement.classList.add('js');
-// ===== OWNER CONFIG =====
-const WA="923455052261",PHONE="03455052261",EMAIL="digitaltakhleeq@gmail.com";
-const wa=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
-const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString("en-US");
-const hi="Hi Digital Takhleeq, ";
-["nwa","fwa","fab"].forEach(i=>$("#"+i).href=wa(hi+"I'd like to know more about your services."));
-$("#fcall").href="tel:"+PHONE;$("#fmail").href="mailto:"+EMAIL;
-// ===== PRICE CARDS (edit here) =====
-const card=c=>`<article class="card rv${c.b?" best":""}">${c.b?'<span class="ribbon">Most chosen</span>':""}<span class="tag ${c.t}">${c.t=="once"?"One-time":"Monthly"}</span><h3>${c.n}</h3><p class="d">${c.d}</p><div class="pr"><small>${c.f||"Starting from"}</small><b>PKR ${c.p}</b><span>${c.u||""}</span></div><ul>${c.i.map(x=>"<li>"+x+"</li>").join("")}</ul><a class="btn ${c.b?"gold":"line"}" href="${wa(hi+"I'm interested in: "+c.n)}">Enquire on WhatsApp</a></article>`;
-const fill=(id,a)=>$(id).innerHTML=a.map(card).join("");
-fill("#webC",[
-{t:"once",n:"Basic One-Page",d:"A simple, professional online presence without unnecessary features.",p:"10,000",i:["Responsive one-page design","4 to 6 sections","WhatsApp and call buttons","Google Maps and social links","Basic SEO, SSL and launch","1 revision round"]},
-{t:"once",b:1,n:"Business One-Page",d:"A professional digital storefront designed around your business.",p:"15,000",i:["Custom modern design","Gallery, testimonials, contact form","Basic animations","Analytics setup","Basic SEO, SSL and launch","2 revision rounds"]},
-{t:"once",n:"Premium / Custom",d:"For businesses that need more customisation or advanced features.",p:"25,000+",i:["Advanced animations","Custom sections and layouts","Interactive components","Extra integrations","Performance optimisation","Priced to your requirements"]}]);
-fill("#socC",[
-{t:"mo",n:"Posting Only",d:"You create the content. We publish it.",p:"5,000",u:"per month",i:["Facebook and Instagram posting","Scheduling","Captions and hashtags"]},
-{t:"mo",n:"Design + Posting",d:"Stay active and professional without full-scale marketing.",p:"10,000",u:"per month",i:["8 to 12 posts a month","Branded graphic design","Captions, hashtags, scheduling"]},
-{t:"mo",b:1,n:"Management",d:"Consistent social media without an agency's cost.",p:"15,000",u:"per month",i:["8 to 12 designed posts","Basic engagement and comment monitoring","Monthly report"]},
-{t:"mo",n:"Growth",d:"More active content management across platforms.",p:"20,000",u:"to 25,000 per month",i:["12 to 16 posts and 4 to 6 reels","Stories and content calendar","Basic DM and comment handling","Competitor monitoring","Monthly analytics report"]}]);
-fill("#gbpC",[
-{t:"once",n:"Profile Setup",d:"Make your business easy to find on Google and Maps.",p:"3,000",u:"to 5,000, one-time",i:["Profile setup or claim assistance","Category, address, hours, services","Logo, cover image, initial photos","Basic optimisation"]},
-{t:"mo",n:"Monthly Management",d:"Keep your profile accurate, fresh and trusted.",p:"3,000",u:"per month",i:["Information and hours updates","2 to 4 Google posts a month","Photo updates","Review monitoring and reply help","Monthly report"]}]);
-fill("#reelC",[
-{t:"once",n:"Single Reel",d:"Pay per reel, depending on complexity.",p:"1,000",u:"per reel",i:["Cuts and sound sync","Captions on request","Revisions by scope"]},
-{t:"once",b:1,n:"5 Reels",d:"A small batch for a month of content.",p:"5,000",u:"one-time",i:["Five edited reels","Consistent style"]},
-{t:"once",n:"10 Reels",d:"Best value for steady posting.",p:"9,000",u:"to 10,000, one-time",i:["Ten edited reels","Consistent style"]}]);
-fill("#bunC",[
-{t:"once",n:"Online Starter",d:"A professional online presence for small businesses.",p:"10,000",u:"to 15,000, one-time",i:["One-page business website","WhatsApp, call, social links, Maps","Basic SEO and launch"]},
-{t:"once",n:"Local Presence",d:"Website, Google and social profiles working together.",p:"18,000",u:"to 20,000 setup",i:["One-page business website","Google Business Profile setup","Social profile integration"]},
-{t:"mo",b:1,n:"Business Presence",d:"Ongoing presence management for local businesses.",p:"10,000",u:"per month + website setup",i:["Website and Google profile setup","Facebook and Instagram, 8 to 12 posts","Google posts and review monitoring"]},
-{t:"mo",n:"Growth",d:"A more active online presence.",p:"20,000",u:"to 25,000 per month + website setup",i:["Website and Google profile","12 to 16 posts, 4 to 6 reels, stories","Monthly analytics report"]}]);
-$("#svcGrid").innerHTML=[["Websites","Your professional digital storefront.","once","One-time"],["Social media","Active, consistent Facebook and Instagram.","mo","Monthly"],["Google Business Profile","Be found on Google and Maps.","once","Setup or monthly"],["Content and reels","Polished short videos for your brand.","once","Per reel"],["Website maintenance","Updates, backups and security checks.","mo","From 2,000 per month"],["Marketing and ads","Campaign setup and monitoring. Ad budget separate.","cq","Custom quote"],["SEO and automation","Local SEO, WhatsApp automation, chatbots.","cq","Custom quote"]].map(s=>`<div class="sv"><h3>${s[0]}</h3><p>${s[1]}</p><span class="tag ${s[2]}">${s[3]}</span></div>`).join("");
-$("#demoC").innerHTML=["Barber and salon","Restaurant and cafe","Local service business"].map(n=>`<div class="demo rv"><div class="th">Demo layout placeholder</div><div><h3>${n}</h3><p>Replace with a real project name and link.</p></div></div>`).join("");
-// ===== CALCULATOR (additive pricing) =====
-const S=[
-{k:"web",n:"Website",d:"One-time",o:[["Basic",[["o",10000]]],["Business",[["o",15000]]],["Premium (from)",[["o",25000]]]]},
-{k:"soc",n:"Social media",d:"Monthly",o:[["Posting",[["m",5000]]],["Design + Posting",[["m",10000]]],["Management",[["m",15000]]],["Growth (from)",[["m",20000]]]]},
-{k:"gbp",n:"Google Business Profile",d:"Setup and or monthly",o:[["Setup",[["o",3000]]],["Monthly",[["m",3000]]],["Both",[["o",3000],["m",3000]]]]},
-{k:"reel",n:"Reels",d:"One-time",o:[["1 reel",[["o",1000]]],["5 reels",[["o",5000]]],["10 reels",[["o",9000]]]]},
-{k:"mnt",n:"Maintenance",d:"Monthly",o:[["Monthly",[["m",2000]]]]},
-{k:"seo",n:"SEO",d:"Custom quote",c:1},{k:"ads",n:"Ads",d:"Custom quote. Ad budget separate.",c:1},{k:"aut",n:"Automation",d:"Custom quote",c:1}];
-const sel={};
-function draw(){
-$("#svg").innerHTML=S.map(s=>{const on=s.k in sel;return `<div class="svc${on?" on":""}" data-k="${s.k}" role="button" tabindex="0" aria-pressed="${on}"><div class="top"><b>${s.n}</b><span class="sw"></span></div><small>${s.d}</small>${on&&s.o&&s.o.length>1?`<div class="opts">${s.o.map((o,i)=>`<button class="chip${sel[s.k]==i?" on":""}" data-k="${s.k}" data-o="${i}">${o[0]}</button>`).join("")}</div>`:""}</div>`}).join("");
-let o=0,m=0,cq=[],n=0;
-S.forEach(s=>{if(!(s.k in sel))return;n++;if(s.c){cq.push(s.n);return}s.o[sel[s.k]][1].forEach(x=>x[0]=="o"?o+=x[1]:m+=x[1])});
-$("#sumB").innerHTML=n?`<div class="l"><span>One-time<br><small>starting from</small></span><b>PKR ${fmt(o)}</b></div><div class="l"><span>Monthly<br><small>starting from</small></span><b>PKR ${fmt(m)}</b></div><div class="l"><span>Custom quote</span><b>${cq.length?cq.join(", "):"None"}</b></div>`:`<p style="color:#B9C3DA">Select a service to see your starting estimate.</p>`;
-const lines=S.filter(s=>s.k in sel).map(s=>s.c?s.n+" (custom quote)":s.n+": "+s.o[sel[s.k]][0]);
-$("#calcWA").href=wa(n?hi+"I'd like a quote for:\n"+lines.join("\n")+"\nEstimate (starting from): PKR "+fmt(o)+" one-time, PKR "+fmt(m)+"/month.":hi+"I'd like to build a package.");}
-$("#svg").addEventListener("click",e=>{const c=e.target.closest(".chip");if(c){sel[c.dataset.k]=+c.dataset.o;return draw()}const v=e.target.closest(".svc");if(!v)return;const k=v.dataset.k;k in sel?delete sel[k]:sel[k]=0;draw()});
-$("#svg").addEventListener("keydown",e=>{if((e.key=="Enter"||e.key==" ")&&e.target.classList.contains("svc")){e.preventDefault();e.target.click()}});
-draw();
-// hero slip: services switch on and off
-const rows=[...document.querySelectorAll(".slip .r")],tot=()=>{const n=rows.filter(r=>!r.classList.contains("off")).length;$("#slipT").textContent=n+" of 6 services selected"};tot();
-if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(()=>{rows[Math.floor(Math.random()*6)].classList.toggle("off");tot()},2200);
-// reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll(".rv").forEach(el=>io.observe(el));
-</script></body></html>
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="w rv">
+      <h2>Let's build your digital presence.</h2>
+      <p>Tell us about your business. We will reply with a clear plan and starting price.</p>
+      <div class="row">
+        <a class="btn gold" id="fwa" href="#">Chat on WhatsApp</a>
+        <a class="btn line" id="fcall" href="#">Call us</a>
+        <a class="btn line" id="fmail" href="#">Email us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="w">
+      <p>All prices are starting prices. Final pricing may vary depending on requirements, content, customization, number of platforms and project complexity.</p>
+      <p>Client-provided content and assets are required unless content creation is included in the selected package. Advertising budget is separate from management fees. SEO results and search rankings cannot be guaranteed.</p>
+      <p>Digital Takhleeq, Islamabad and Rawalpindi, Pakistan.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a class="fab" id="fab" href="#">WhatsApp</a>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
