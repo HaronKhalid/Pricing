@@ -154,7 +154,7 @@ nav {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 20;
-  background: var(--navy);
+  background: #000000;
   color: #F7F2E8;
 }
 
@@ -646,31 +646,6 @@ nav a.btn {
   margin-top: 4px;
 }
 
-.demo {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--card);
-}
-
-.demo .th {
-  height: 150px;
-  background: linear-gradient(135deg, var(--navy), var(--navy2));
-  display: flex;
-  align-items: flex-end;
-  padding: 14px;
-  color: #F7F2E8;
-  font-size: 0.85rem;
-}
-
-.demo div + div {
-  padding: 16px;
-}
-
-.demo p {
-  color: var(--mut);
-  font-size: 0.9rem;
-}
 
 details {
   border-bottom: 1px solid var(--line);
@@ -740,16 +715,31 @@ footer p + p {
 
 .fab {
   position: fixed;
-  right: 16px;
-  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   z-index: 30;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   background: #25D366;
-  color: #073B1B;
-  font-weight: 600;
-  padding: 13px 20px;
-  border-radius: 99px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.fab:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.38);
+}
+
+.fab svg {
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
 /* Reveal Animations */

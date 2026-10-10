@@ -303,25 +303,6 @@ if (svcGrid) {
   `).join("");
 }
 
-// Demo Projects
-const demoProjects = [
-  "Barber and salon",
-  "Restaurant and cafe",
-  "Local service business"
-];
-
-const demoContainer = $("#demoC");
-if (demoContainer) {
-  demoContainer.innerHTML = demoProjects.map((title) => `
-    <div class="demo rv">
-      <div class="th">Demo layout placeholder</div>
-      <div>
-        <h3>${title}</h3>
-        <p>Replace with a real project name and link.</p>
-      </div>
-    </div>
-  `).join("");
-}
 
 // ==========================================
 // 3. INTERACTIVE PACKAGE CALCULATOR
